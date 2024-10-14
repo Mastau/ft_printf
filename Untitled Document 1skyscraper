@@ -1,0 +1,76 @@
+print des enfers - AKA ETRE DIFFERENT GRACE A BABONNET
+On fait vdprintf pour faire printf eheheh
+
+INTRO:
+You will discover a popular and versatile C function: printf(). This exercise is a great
+opportunity to improve your programming skills. It is of moderate difficulty.
+You will discover variadic functions in C.
+The key to a successful ft_printf is a well-structured and extensible code.
+Once this assignment passed, you will be allowed to add your
+ft_printf() to your libft so you can use it in your school C
+projects.
+
+
+MANDA PART :
+
+
+
+- Libft allowed
+	A UTILISER SELON CE TRUC : If your project allows you to use your libft, you must copy its sources and its associated Makefile in a libft folder with its associated Makefile. Your project’s
+Makefile must compile the library by using its Makefile, then compile the project.
+
+	1) repo libft dans mon repo en legende
+	2) makefile du makefile
+	3) Ou est le libft.a ??
+	4) Commemt on utilise le .a je suis trop bete
+
+
+%c Prints a single character. -> putstrfd
+• %s Prints a string (as defined by the common C convention). -> Putstr ?? Commom C standard ??
+
+• %p The void * pointer argument has to be printed in hexadecimal format. 
+	Affichage de l'adresse du ptr en hexa (C'etait pas un sujet de piscine ca ?)
+
+• %d Prints a decimal (base 10) number.
+	Putnbr ?
+• %i Prints an integer in base 10.
+	heuuuuu
+• %u Prints an unsigned decimal (base 10) number.
+	eh bah toujours plus .. pas vrai la team ?
+• %x Prints a number in hexadecimal (base 16) lowercase format.
+• %X Prints a number in hexadecimal (base 16) uppercase format.
+	ahaha c'est la meme chose 
+	
+• %% Prints a percent sign.
+	%%c affiche %c on oublie pas 
+
+va_start, va_arg va_copy va_end -> include stdarg
+
+
+MAN stdarg
+
+#include <stdarg.h>
+       void va_start(va_list ap, last);
+       type va_arg(va_list ap, type);
+       void va_end(va_list ap);
+       void va_copy(va_list dest, va_list src);
+
+first call va_start() -> 
+
+
+FT_PRINTF_H
+ft_vdprintf()
+ft_putchar_fd()
+ft_putstr_fd()
+ft_putnbr_fd()
+ft_puthexa_fd ? (Put str base ???)
+ft_
+
+
+
+
+
+
+
+
+
