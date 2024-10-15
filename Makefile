@@ -6,14 +6,15 @@
 #    By: thomarna <thomarna@42angouleme.fr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/08 22:19:48 by thomarna          #+#    #+#              #
-#    Updated: 2024/10/14 20:22:53 by thomarna         ###   ########.fr        #
+#    Updated: 2024/10/15 11:43:03 by thomarna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
+LIB = libft/libft.a
+
 CC = clang
 SRCS = 	ft_printf.c \
-
 
 OBJS = $(SRCS:.c=.o)
 
@@ -29,11 +30,8 @@ $(NAME): $(OBJS)
 
 all: $(NAME)
 
-bonus: $(OBJS_BONUS)
-	ar -rcs $(NAME) $(OBJS_BONUS)
-
 clean:
-	rm -f $(OBJS) $(OBJS_BONUS)
+	rm -f $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)
