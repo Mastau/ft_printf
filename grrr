@@ -71,6 +71,12 @@ ft_
 
 
 
+Putnbr base
+- int base 10
+- unsigned decimal base 10
+- nb hexa lower
+- nb hexa UPPER
 
+long long > 
 
 

@@ -6,25 +6,15 @@
 /*   By: thomarna <thomarna@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 15:13:37 by thomarna          #+#    #+#             */
-/*   Updated: 2024/10/19 15:17:35 by thomarna         ###   ########.fr       */
+/*   Updated: 2024/10/22 17:27:15 by thomarna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_strlen(const char *str)
-{
-	const char	*tmp;
-
-	tmp = str;
-	while (*tmp)
-		tmp++;
-	return (tmp - str);
-}
-
 void	ft_putchar_fd(char c, int fd, int *count)
 {
-	if (!c || !fd || !count)
+	if (!fd || !count)
 		return ;
 	write(fd, &c, 1);
 	*count += 1;
@@ -32,10 +22,18 @@ void	ft_putchar_fd(char c, int fd, int *count)
 
 void	ft_putstr_fd(char *s, int fd, int *count)
 {
-	if (!s || !fd || !count)
+	if (!fd || !count)
 		return ;
-	write(fd, s, ft_strlen(s));
-	*count += ft_strlen(s);
+	if (s == NULL)
+	{
+		write(fd, "(null)", 6);
+		*count += 6;
+	}
+	else
+	{
+		write(fd, s, ft_strlen(s));
+		*count += ft_strlen(s);
+	}
 }
 
 void	ft_putnbr_fd(int nb, int fd, int *count)
@@ -63,7 +61,7 @@ void	ft_putnbr_base_fd(unsigned long int nb, char *base, int fd, int *count)
 {
 	unsigned long int	base_size;
 
-	if (!nb || !base || !fd || !count)
+	if (!base || !fd || !count)
 		return ;
 	base_size = ft_strlen(base);
 	if (nb >= base_size)
@@ -73,4 +71,15 @@ void	ft_putnbr_base_fd(unsigned long int nb, char *base, int fd, int *count)
 	}
 	else
 		ft_putchar_fd(base[nb], fd, count);
+}
+
+void	ft_putpointer_fd(unsigned long int ptr, int fd, int *count)
+{
+	if (!ptr)
+		ft_putstr_fd("(nil)", fd, count);
+	else
+	{
+		ft_putstr_fd("0x", fd, count);
+		ft_putnbr_base_fd(ptr, "0123456789abcdef", fd, count);
+	}
 }
