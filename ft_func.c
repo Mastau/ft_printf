@@ -6,7 +6,7 @@
 /*   By: thomarna <thomarna@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 15:13:37 by thomarna          #+#    #+#             */
-/*   Updated: 2024/10/22 17:27:15 by thomarna         ###   ########.fr       */
+/*   Updated: 2024/10/22 19:30:33 by thomarna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,12 @@ void	ft_putnbr_fd(int nb, int fd, int *count)
 	if (nb < 10)
 	{
 		ft_putchar_fd(nb + '0', fd, count);
-		return ;
 	}
-	ft_putnbr_fd(nb / 10, fd, count);
-	ft_putnbr_fd(nb % 10, fd, count);
+	else
+	{
+		ft_putnbr_fd(nb / 10, fd, count);
+		ft_putchar_fd(nb % 10 + '0', fd, count);
+	}
 }
 
 void	ft_putnbr_base_fd(unsigned long int nb, char *base, int fd, int *count)
@@ -67,7 +69,7 @@ void	ft_putnbr_base_fd(unsigned long int nb, char *base, int fd, int *count)
 	if (nb >= base_size)
 	{
 		ft_putnbr_base_fd(nb / base_size, base, fd, count);
-		ft_putnbr_base_fd(nb % base_size, base, fd, count);
+		ft_putchar_fd(base[nb % base_size], fd, count);
 	}
 	else
 		ft_putchar_fd(base[nb], fd, count);

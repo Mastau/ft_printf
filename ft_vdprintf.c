@@ -6,7 +6,7 @@
 /*   By: thomarna <thomarna@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:53:10 by thomarna          #+#    #+#             */
-/*   Updated: 2024/10/22 17:26:32 by thomarna         ###   ########.fr       */
+/*   Updated: 2024/10/22 19:23:46 by thomarna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,3 +71,5 @@ int	ft_vdprintf(int fd, const char *format, va_list ap)
 	}
 	return (res);
 }
+
+
