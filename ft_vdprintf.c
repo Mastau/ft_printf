@@ -71,5 +71,3 @@ int	ft_vdprintf(int fd, const char *format, va_list ap)
 	}
 	return (res);
 }
-
-
